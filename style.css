@@ -1,6 +1,6 @@
 .videoContainer {
   position: relative;
-  width: 720px;
+  width: 100%;
   font-family: Arial;
   background-color: black;
 }
