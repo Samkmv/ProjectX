@@ -110,6 +110,24 @@
       video_2.src = videoSrc_4;
     }
 
+    var xhr = new XMLHttpRequest();
+      xhr.open('GET', videoSrc, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log('Поток готов!');
+          } else if (xhr.status === 404) {
+            setTimeout(function(){
+              location.reload();
+            }, 10000);
+            console.log('Поток не найден');
+          } else {
+            console.log('Произошла ошибка');
+          }
+        }
+      };
+      xhr.send();
+
 /*
     function UrlExists(url) {
         var http = new XMLHttpRequest();
